@@ -1,0 +1,73 @@
+# queries.yaml
+groups:
+  - name: Polygon.io
+    enabled: true
+    searches:
+      - name: Polygon REST endpoints
+        type: code
+        enabled: true
+        query: "\"api.polygon.io\""
+      - name: Polygon Python usage
+        type: code
+        enabled: true
+        query: "\"import polygon\" OR \"from polygon\" language:python"
+      - name: Go module
+        type: code
+        enabled: true
+        query: "filename:go.mod \"github.com/polygon-io\""
+      - name: Repo mention (README/desc)
+        type: repo
+        enabled: true
+        query: "(polygon OR \"api.polygon.io\") in:readme,description"
+
+  - name: Alpaca
+    enabled: true
+    searches:
+      - name: Alpaca REST endpoints
+        type: code
+        enabled: true
+        query: "\"api.alpaca.markets\" OR \"paper-api.alpaca.markets\""
+      - name: Alpaca Python client
+        type: code
+        enabled: true
+        query: "\"import alpaca_trade_api\" language:python"
+      - name: Go client
+        type: code
+        enabled: true
+        query: "\"github.com/alpacahq/alpaca-trade-api-go\" language:go"
+      - name: Repo mention
+        type: repo
+        enabled: true
+        query: "(alpaca OR \"alpaca.markets\") in:readme,description"
+
+  - name: IBKR
+    enabled: true
+    searches:
+      - name: ibapi / ib_insync (Python)
+        type: code
+        enabled: true
+        query: "\"import ibapi\" OR \"from ibapi\" OR \"import ib_insync\" OR \"from ib_insync\" language:python"
+      - name: Java client classes
+        type: code
+        enabled: true
+        query: "\"com.ib.client\" language:java"
+      - name: Repo mention
+        type: repo
+        enabled: true
+        query: "(ibkr OR ibapi OR \"Interactive Brokers\") in:readme,description"
+
+  - name: Databento
+    enabled: true
+    searches:
+      - name: Databento Python
+        type: code
+        enabled: true
+        query: "\"import databento\" OR \"from databento\" language:python"
+      - name: Endpoints / hostnames
+        type: code
+        enabled: true
+        query: "\"hist.databento.com\" OR \"live.databento.com\""
+      - name: Repo mention
+        type: repo
+        enabled: true
+        query: "databento in:readme,description"
